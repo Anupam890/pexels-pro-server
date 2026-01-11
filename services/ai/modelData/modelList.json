@@ -1,0 +1,16 @@
+{
+  "models": [
+    {
+      "Mistral": "mistralai/ministral-14b-2512"
+    },
+    {
+      "BlackForest": "black-forest-labs/flux.2-pro"
+    },
+    {
+      "GrokAI": "x-ai/grok-4.1-fast"
+    },
+    {
+      "Gemini3": "google/gemini-3-pro-preview"
+    }
+  ]
+}
