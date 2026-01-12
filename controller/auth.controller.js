@@ -41,20 +41,20 @@ dotenv.config();
 // }));
 
 
-export const googleAuth = passport.authenticate('google', { scope: ['profile', 'email'] });
+// export const googleAuth = passport.authenticate('google', { scope: ['profile', 'email'] });
 
-export const googleAuthCallback = (req, res) => {
-    const user = req.user;
+// export const googleAuthCallback = (req, res) => {
+//     const user = req.user;
 
-    res.status(200).json({
-        message: "Google Login successful",
-        user: {
-            id: user._id,
-            name: user.name,
-            email: user.email
-        }
-    });
-};
+//     res.status(200).json({
+//         message: "Google Login successful",
+//         user: {
+//             id: user._id,
+//             name: user.name,
+//             email: user.email
+//         }
+//     });
+// };
 
 export const register = async (req, res) => {
     try {
