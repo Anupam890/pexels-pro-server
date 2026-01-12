@@ -3,8 +3,7 @@ import passport from "passport";
 import { Strategy as GoogleStrategy } from "passport-google-oauth20";
 import User from "../db/models/users.js";
 import { sendVerificationEmail } from "../services/mailer/resend.js";
-import dotenv from "dotenv";
-dotenv.config();
+
 
 
 // passport.use(new GoogleStrategy({
