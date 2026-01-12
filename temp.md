@@ -5,3 +5,5 @@ OPEN_ROUTER_API="sk-or-v1-e6b99993068cd49bec1af6e56b697b535a6bf9143dec86bf28d34f
 
 GOOGLE_CLIENT_ID="730835429059-11hj5oo4llqtqgnmt47fg055tu95dmqe.apps.googleusercontent.com"
 GOOGLE_CLIENT_SECRET="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"
+
+live_uri=" https://pexels-pro-server.onrender.com"

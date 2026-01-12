@@ -1,11 +1,12 @@
 import express from "express";
 import passport from "passport";
-import { register, login, googleAuth, googleAuthCallback } from '../controller/auth.controller.js'
+import { register, login, googleAuth, googleAuthCallback, EmailVerify } from '../controller/auth.controller.js'
 
 const authRoute = express.Router();
 
 authRoute.post('/register', register);
 authRoute.post('/login', login);
+authRoute.post('/email-verify', EmailVerify);
 
 // Google Routes
 authRoute.get('/google', googleAuth);

@@ -134,6 +134,33 @@ export const login = async (req, res) => {
 };
 
 
+export const EmailVerify = async (req, res) => {
+    try {
+        const { email } = req.body;
+        if (!email) {
+            return res.status(400).json({ message: "Email is required" });
+        }
+        const user = await User.findOne({ email });
+        if (!user) {
+            return res.status(400).json({ message: "User not found" });
+        }
+        if (user.isVerified) {
+            return res.status(400).json({ message: "User already verified" });
+        }
+        const verificationToken = Math.floor(100000 + Math.random() * 900000).toString();
+        user.verificationToken = verificationToken;
+        user.verificationTokenExpiresAt = Date.now() + 24 * 60 * 60 * 1000;
+        user.isVerified = true;
+        await user.save();
+        await sendVerificationEmail(user.email, verificationToken);
+        res.status(200).json({ message: "Verification email sent successfully" });
+    } catch (error) {
+        console.error("Email verification error:", error);
+        res.status(500).json({ message: error.message });
+    }
+}
+
+
 export const forgotPassword = async (req, res) => {
     // Implement forgot password logic
 };
