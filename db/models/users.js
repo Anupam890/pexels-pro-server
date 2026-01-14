@@ -46,7 +46,7 @@ const userSchema = new mongoose.Schema({
     verificationTokenExpiresAt: Date,
     credits: {
         type: Number,
-        default: 10
+        default: 150
     }
 }, { timestamps: true });
 
